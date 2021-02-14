@@ -1,6 +1,6 @@
 # Kickstart Campaign Smart Contract
 
-Smart contract project built in the Rinkeby Test Network for Ethereum. The campaign smart contract file consist of two contracts, a CampaignFactory contract and the Campaign contract itself, the CampaignFactory is in charge of deploying a new instance of the Campaign contract. The Campaign smart contract has the methods contribute, createRequest, approveRequest and finalizeRequest. Only the manager can create a request to expend the balance of the contract and finalize that request and only the contributors can approve an expend request and can vote to approve one time per request.
+Smart contract project built in the Rinkeby Test Network for Ethereum. The campaign smart contract file consist of two contracts, a CampaignFactory contract and the Campaign contract itself, the CampaignFactory is in charge of deploying a new instance of the Campaign contract. The Campaign smart contract has the methods contribute, createRequest, approveRequest and finalizeRequest. Only the manager can create a request to expend the balance of the contract and finalize that request and only the contributors can approve an expend request by voting to approve once per request.
 
 ![screenshot](./app_screenshot.png)
 
