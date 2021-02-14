@@ -15,6 +15,7 @@ Smart contract project built in the Rinkeby Test Network for Ethereum. The campa
 - Mocha
 - Solc
 - fs-extra
+- truffle-hdwallet-provider 0.0.3
 - Rinkeby Test Network
 - Metamask Wallet
 
