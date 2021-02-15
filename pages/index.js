@@ -35,13 +35,15 @@ class CampaignIndex extends Component {
         />
 
         <h3>Open Campaigns</h3>
-        {this.renderCampaigns()}
-
         <Button 
+          floated="right"
           content="Create Campaign"
           icon="add circle"
           primary
         />
+        
+        {this.renderCampaigns()}
+
       </div>
     </Layout>
     );
