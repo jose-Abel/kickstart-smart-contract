@@ -8,6 +8,7 @@ Smart contract project built in the Rinkeby Test Network for Ethereum. The campa
 
 - Solidity 0.4.17
 - Javascript
+- Next.js
 - React
 - ReactDOM
 - Web3 1.0.0-beta.26
@@ -29,6 +30,12 @@ Smart contract project built in the Rinkeby Test Network for Ethereum. The campa
 ## Live version
 
 ### Setup
+
+### Tests
+
+To run the test, open the terminal in the root directory and type
+
+- npm run test
 
 ## 📝 License
 
