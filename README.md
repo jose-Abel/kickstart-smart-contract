@@ -7,14 +7,16 @@ Smart contract project built in the Rinkeby Test Network for Ethereum. The campa
 ## Built With
 
 - Solidity 0.4.17
+- Solc
 - Javascript
 - Next.js
 - React
 - ReactDOM
+- Semantic-ui-react
+- Semantic-ui-css
 - Web3 1.0.0-beta.26
 - Ganache-cli
 - Mocha
-- Solc
 - fs-extra
 - truffle-hdwallet-provider 0.0.3
 - Rinkeby Test Network
