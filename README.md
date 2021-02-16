@@ -10,6 +10,7 @@ Smart contract project built in the Rinkeby Test Network for Ethereum. The campa
 - Solc
 - Javascript
 - Next.js
+- next-routes
 - React
 - ReactDOM
 - Semantic-ui-react
