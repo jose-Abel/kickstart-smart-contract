@@ -85,7 +85,7 @@ class RequestNew extends Component {
             header="Oops"
             content={this.state.errorMessage}
             />
-          <Button loading={this.loading} primary>Create!</Button>
+          <Button loading={this.state.loading} primary>Create!</Button>
         </Form>
       </Layout>
     );
