@@ -5,55 +5,24 @@ import Campaign from "../ethereum/campaign";
 
 class RequestRow extends Component {
 
-  state = {
-    loading: false,
-    errorMessage: ""
-  }
-
   onApprove = async () => {
-
-    this.setState({loading: false});
-
-    // this.setState({loading: false, errorMessage: ""});
-
     const campaign = Campaign(this.props.address);
 
     const accounts = await web3.eth.getAccounts();
 
-    try {
-      await campaign.methods.approveRequest(this.props.id).send({
-        from: accounts[0]
-      });
-
-    } catch(err) {
-      // this.setState({errorMessage: err.message});
-    }
-
-    this.setState({loading: false});
-
+    await campaign.methods.approveRequest(this.props.id).send({
+      from: accounts[0]
+    });
   }
 
   onFinalize = async () => {
-
-    this.setState({loading: false});
-
-    // this.setState({loading: false, errorMessage: ""});
-
     const campaign = Campaign(this.props.address);
 
     const accounts = await web3.eth.getAccounts();
 
-    try {
-      await campaign.methods.finalizeRequest(this.props.id).send({
-        from: accounts[0]
-      });
-
-    } catch(err) {
-      // this.setState({errorMessage: err.message});
-    }
-
-    this.setState({loading: false});
-
+    await campaign.methods.finalizeRequest(this.props.id).send({
+      from: accounts[0]
+    });
   }
 
   render() {
@@ -61,19 +30,26 @@ class RequestRow extends Component {
 
     const { id, request, approversCount } = this.props;
 
+    const readyToFinalize = request.approvalCount > approversCount / 2;
+
     return (
-      <Row>
+      <Row disabled={request.complete} positive={readyToFinalize && !request.complete}>
         <Cell>{id}</Cell>
         <Cell>{request.description}</Cell>
         <Cell>{web3.utils.fromWei(request.value, "ether")}</Cell>
         <Cell>{request.recipient}</Cell>
         <Cell>{request.approvalCount} / {approversCount}</Cell>
+
         <Cell>
-          <Button color="green" onClick={this.onApprove} loading={this.state.loading}>Approve</Button>
+          { request.complete ? null : (
+            <Button color="green" onClick={this.onApprove} >Approve</Button>
+          )}
         </Cell>
 
         <Cell>
-          <Button color="teal" onClick={this.onFinalize} loading={this.state.loading}>Finalize</Button>
+        { request.complete ? null : (
+          <Button color="teal" onClick={this.onFinalize} >Finalize</Button>
+        )}
         </Cell>
       </Row>
     )
