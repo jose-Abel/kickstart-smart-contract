@@ -32,6 +32,8 @@ Smart contract project built in the Rinkeby Test Network for Ethereum. The campa
 
 ## Live version
 
+https://kickstart-smart-contract.herokuapp.com/
+
 ### Setup
 
 ### Tests
